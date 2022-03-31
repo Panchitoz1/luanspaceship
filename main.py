@@ -13,6 +13,14 @@ class Spaceship:
         self.style = style
         self.style = ascii
 
+
+# To draw our spaceship we will divide it into 4 parts
+class ASCII_Spaceship:
+    def __init__(self, top, mid_top, mid_bottom, bottom):
+        self.top = top
+        self.mid_top = mid_top
+        self.mid_bottom = mid_bottom
+        self.bottom = bottom
 # When a user selects some flags, she/he can enable some functions
 # with appropiated flags. This class/struct checks those options
 class UserBoolOptions:
