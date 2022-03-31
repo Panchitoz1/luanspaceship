@@ -21,17 +21,11 @@ class ASCII_Spaceship:
         self.mid_top = mid_top
         self.mid_bottom = mid_bottom
         self.bottom = bottom
-# When a user selects some flags, she/he can enable some functions
-# with appropiated flags. This class/struct checks those options
-class UserBoolOptions:
-    def __init__(self, clipboard, help):
-        self.clipboard = clipboard
-        self.help = help
 
 
 def main(argv):
     # Get parameters obtained with flags in command line
-    spaceship_length, spaceship_color, spaceship_style,  user_clipboard, user_help = gi.GetInput(argv)
+    spaceship_length, spaceship_color, spaceship_style,  useClipboard = gi.GetInput(argv)
 
     #Create ASCII Spaceship art based on length provided by the user
     ascii_spaceship = ds.DrawLuanSpaceship(spaceship_length)
@@ -39,7 +33,6 @@ def main(argv):
 
     #Use values obtained with flags and assign them to classes/structs
     LuanSpaceship = Spaceship(spaceship_length, spaceship_color, spaceship_style, None)
-    UserOptions = UserBoolOptions(user_clipboard, user_help)
 
 
 if __name__ == "__main__":

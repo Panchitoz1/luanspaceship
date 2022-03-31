@@ -26,7 +26,7 @@ flag_default_print = False
 # Help text for flags
 flag_text_style = 'Select the style you want to print your ASCII Spaceship.'
 flag_text_color = 'Select a bunch of colors for Luan Spaceship.'
-flag_text_length = 'Size for Luan Spaceship (in ASCII characters units (??)).'
+flag_text_length = 'Size for Luan Spaceship (in ASCII character units (??)).'
 flag_text_clipboard = 'Copies Spaceship generated into your clipboard.'
 flag_text_help = 'Prints this help message.'
 flag_text_print = 'Prints parameters selected via flags by the user.'
@@ -43,7 +43,7 @@ flags.DEFINE_boolean(flag_name_print, flag_default_print, flag_text_print)
 # Get arguments via command line interface (CLI) given by the user
 def GetInput(argv):
     checkInput(argv)
-    return FLAGS.length, FLAGS.colorstyle, FLAGS.style, FLAGS.clipboard, FLAGS.h
+    return FLAGS.length, FLAGS.colorstyle, FLAGS.style, FLAGS.clipboard
 
 
 # Check if the user has provided some flags and display functions if so
