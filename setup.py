@@ -4,7 +4,8 @@ import os
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-
+with open('requirements.txt') as f:
+    required = f.read().splitlines()
 
 setuptools.setup(
         name='luanspaceship',
@@ -20,9 +21,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         ],
-        install_requires=['pyperclip',
-            'absl-py'
-            ],
+        install_requires=required,
         entry_points='''
         [console_scripts]
         luanspaceship=LuanSpaceship.command_line:run_cli
