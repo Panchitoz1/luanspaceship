@@ -10,6 +10,6 @@ setuptools.setup(
             ],
         entry_points='''
         [console_scripts]
-        LuanSpacehip=LuanSpacehip.command_line:start
+        luanspaceship=LuanSpaceship.command_line:start
         '''
         )
