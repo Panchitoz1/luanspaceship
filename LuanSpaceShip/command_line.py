@@ -2,6 +2,7 @@ from absl import app
 from Functions import Get_input_as_flags as gi
 from Functions import DrawSpaceship as ds
 import subprocess
+import pyperclip
 
 
 # Define a class/struct with desired parameters for spaceship
@@ -36,4 +37,8 @@ def main(argv):
 
 
 if __name__ == "__main__":
+    app.run(main)
+
+
+def start():
     app.run(main)
