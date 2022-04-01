@@ -32,6 +32,9 @@ def main(argv):
     ascii_spaceship = ds.DrawLuanSpaceship(spaceship_length)
     print(ascii_spaceship)
 
+    if useClipboard:
+        pyperclip.copy(ascii_spaceship)
+
     #Use values obtained with flags and assign them to classes/structs
     LuanSpaceship = Spaceship(spaceship_length, spaceship_color, spaceship_style, None)
 
