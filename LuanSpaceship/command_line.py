@@ -39,9 +39,7 @@ def main(argv):
     LuanSpaceship = Spaceship(spaceship_length, spaceship_color, spaceship_style, None)
 
 
-if __name__ == "__main__":
-    app.run(main)
 
-
-def start():
+# Start CLI
+def run_cli():
     app.run(main)

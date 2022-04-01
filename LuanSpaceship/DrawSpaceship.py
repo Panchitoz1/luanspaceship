@@ -3,10 +3,10 @@
 def DrawLuanSpaceship(length):
    top = drawTopSpaceship(length)
    mid_top = drawMidTopSpaceship(length)
-   mid_bottom = drawMidBottomSpaceship(length)
-   bottom = 'a'
-      
-   return top+mid_top+mid_bottom
+   mid_bottom, counter = drawMidBottomSpaceship(length)
+   bottom = drawBottomSpaceShip(length, counter)
+
+   return top+mid_top+mid_bottom+bottom
 
 
 # Draw the top part of the spaceship
@@ -27,7 +27,7 @@ def drawTopSpaceship(length):
         else:
             top_spaceship += ' '*(2*length-i)             
             top_spaceship += '/'
-            top_spaceship += ' '*((2*i) - 1)
+            top_spaceship += '@'*((2*i) - 1)
             top_spaceship += '\\\n'
 
     return top_spaceship
@@ -54,9 +54,11 @@ def drawMidTopSpaceship(length):
 
 # Draw mid-bottom part of the spaceship 
 def drawMidBottomSpaceship(length):
+
+    counter = 0
     # First, check 2 special cases/lengths that do not follow a pattern
     if length == 1:
-        return "/|_|\\"
+        return "/|_|\\\n", 0 
 
     if length == 2:
         midbottom_spaceship = ''
@@ -67,11 +69,11 @@ def drawMidBottomSpaceship(length):
         midbottom_spaceship += '/ |'
         midbottom_spaceship += '_' * (2*length - 1)
         midbottom_spaceship += '| \\\n'
-        return midbottom_spaceship
+        return midbottom_spaceship, 0 
 
     midbottom_spaceship = ''
     start = length//3 
-    counter = 0
+    
 
     for x in range(1, length+1):
         if x > start:
@@ -92,6 +94,54 @@ def drawMidBottomSpaceship(length):
             midbottom_spaceship += '|'
             midbottom_spaceship += ' ' * ((2*length) - 1)
             midbottom_spaceship += '|\n'
-    return midbottom_spaceship
-            
-        
+    return midbottom_spaceship, counter
+
+
+def drawBottomSpaceShip(length, counter):
+    if length == 1:
+        return "\\/+\\/\n  +\n"
+
+    if length == 2:
+        bottom = "\\/+++++\\/\n"+printFire(3, length)
+        return bottom
+
+    if length == 3:
+        bottom = " \\/"+"+"*(2*length + 1)+"\\/\n"+printFire(length+1, length)
+        return bottom 
+ 
+    bottom = ''
+    width = counter
+
+    for x in range(width+1):
+        bottom += ' ' * (length - width - 1)
+        if x == width:
+            char = '_'
+        else:
+            char = '-'
+        bottom += '|' + char * width + '|'
+        bottom += '+'* ((2*length) - 1)
+        bottom += '|' + char * width + '|\n'
+    bottom += printFire(length+1, length)
+    return bottom
+
+
+
+def printFire(initial_spaces, length):
+    fire = ''
+    for i in range(length+1):
+        fire += ' '*(initial_spaces + i)
+        fire += '+'*((2*length) - 1 - (2 * i))
+        fire += '\n'
+    fire += '\n'
+
+    return fire
+
+
+def getWidth(length):
+    if length%2 == 1:
+        return (length+1)//2
+   
+    return length//2
+
+
+

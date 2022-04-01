@@ -18,7 +18,7 @@ flag_name_print = 'print'
 # Default values for flags
 flag_default_style = ''
 flag_default_color = ''
-flag_default_length = 1
+flag_default_length = 5
 flag_default_clipboard = False
 flag_default_help = False
 flag_default_print = False
