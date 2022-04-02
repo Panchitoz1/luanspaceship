@@ -29,6 +29,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+  <a href="https://github.com/Panchitoz1/luanspaceship">
+    <img src="images/logo.png" alt="Logo" width="122" height="233">
+  </a>
+
+
 
 <h3 align="center">Luan Spaceship</h3>
 
@@ -117,7 +122,7 @@ This simple project needs a few Python3 packages to run properly.
   
   - Download the script, from [https://bootstrap.pypa.io/get-pip.py](https://bootstrap.pypa.io/get-pip.py)
 
-  - Open a terminal/command prompt, cd to the folder containing the <b>get-pip.py</b> file and run
+  - Open a terminal/command prompt, `cd` to the folder containing the <b>get-pip.py</b> file and run
 
     On Linux/MacOS:
     ```
@@ -147,11 +152,12 @@ This simple project needs a few Python3 packages to run properly.
     ```sh
     python3 -m pip install --upgrade setuptools
     ```
-   This should install all package-dependences
 3. Install using <b>setup.py</b>
    ```sh
    python3 setup.py install
    ```
+   This should also install all package-dependences
+   
 4. (Optional to fix 'Module error') If for some reason when run the program in terminal Python returns a Module error due to some packages not being found, try this:
 
     - Ensure you are in the repo directory:
@@ -235,9 +241,7 @@ Project Link: [https://github.com/Panchitoz1/luanspaceship](https://github.com/P
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Science & Commit // Workshop 2022](https://github.com/Science-and-Commit/Workshop_2022)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
