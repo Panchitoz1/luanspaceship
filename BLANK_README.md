@@ -22,30 +22,27 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+
 
 
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Luan Spaceship</h3>
 
   <p align="center">
-    project_description
+    A simple Python Command-Line Interface script that prints a variable-size spaceship!
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Panchitoz1/luanspaceship"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/Panchitoz1/luanspaceship">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/Panchitoz1/luanspaceship/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/Panchitoz1/luanspaceship/issues">Request Feature</a>
   </p>
 </div>
 
@@ -84,7 +81,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `Panchitoz1`, `luanspaceship`, `twitter_handle`, `linkedin_username`, `ffcarrasco@uc.cl_client`, `ffcarrasco@uc.cl`, `Luan Spaceship`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -106,34 +103,67 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Installing
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+
+This simple project needs a few Python3 packages to run properly.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+
+* <b>pip</b> (if you have already installed <b>pip</b> you can ignore this subsection) 
+
+  If for some reason you have not installed <b>pip</b> with Python3 (which would be... weird) try this: 
+  
+  - Download the script, from [https://bootstrap.pypa.io/get-pip.py](https://bootstrap.pypa.io/get-pip.py)
+
+  - Open a terminal/command prompt, cd to the folder containing the <b>get-pip.py</b> file and run
+
+    On Linux/MacOS:
+    ```
+    python3 get-pip.py
+    ```
+    On Windows:
+      ```
+      py get-pip.py
+      ```
+    
+    For more options you can also check [official Python 'pip' documentation](https://pip.pypa.io/en/stable/installation/).
+
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+* Option 1: <b>pip install</b>
+  ```sh
+   pip install luanspaceship
+   ```
+  
+* Option 2: Building
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/Panchitoz1/luanspaceship.git
    ```
-3. Install NPM packages
+2. Ensure <b>setuptools</b> package is updated: 
+    ```sh
+    python3 -m pip install --upgrade setuptools
+    ```
+   This should install all package-dependences
+3. Install using <b>setup.py</b>
    ```sh
-   npm install
+   python3 setup.py install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+4. (Optional to fix 'Module error') If for some reason when run the program in terminal Python returns a Module error due to some packages not being found, try this:
+
+    - Ensure you are in the repo directory:
+       ```sh
+       cd /path/to/repo/LuanSpaceship
+       ```
+
+       Once there, simply run:
+        ```sh
+        pip install -r requirements.txt
+        ```
+      and try re-running command from Step 3.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -158,7 +188,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/Panchitoz1/luanspaceship/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -185,7 +215,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -194,9 +224,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Francisco Carrasco Varela - email: ffcarrasco@uc.cl
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/Panchitoz1/luanspaceship](https://github.com/Panchitoz1/luanspaceship)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -215,16 +245,16 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Panchitoz1/luanspaceship.svg?style=for-the-badge
+[contributors-url]: https://github.com/Panchitoz1/luanspaceship/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Panchitoz1/luanspaceship.svg?style=for-the-badge
+[forks-url]: https://github.com/Panchitoz1/luanspaceship/network/members
+[stars-shield]: https://img.shields.io/github/stars/Panchitoz1/luanspaceship.svg?style=for-the-badge
+[stars-url]: https://github.com/Panchitoz1/luanspaceship/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Panchitoz1/luanspaceship.svg?style=for-the-badge
+[issues-url]: https://github.com/Panchitoz1/luanspaceship/issues
+[license-shield]: https://img.shields.io/github/license/Panchitoz1/luanspaceship.svg?style=for-the-badge
+[license-url]: https://github.com/Panchitoz1/luanspaceship/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
