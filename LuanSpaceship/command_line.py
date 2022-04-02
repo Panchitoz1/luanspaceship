@@ -32,6 +32,7 @@ def main(argv):
     ascii_spaceship = ds.DrawLuanSpaceship(spaceship_length)
     print(ascii_spaceship)
 
+    # If user type '-clipboard' flag, then copy it to the clipboard
     if useClipboard:
         pyperclip.copy(ascii_spaceship)
 
