@@ -16,7 +16,9 @@ def drawTopSpaceship(length):
     for i in range(0, length+1):
         if i == 0:
              top_spaceship += ' '*2*length
-             top_spaceship += '^ \n'
+             top_spaceship += '^'
+             top_spaceship += ' '*2*length + '\n'
+
         
         elif i == length:
             top_spaceship += ' '*length 
@@ -27,11 +29,12 @@ def drawTopSpaceship(length):
 
 
         else:
-            top_spaceship += ' '*(2*length-i) 
+            top_spaceship += ' ' * ( (2*length) - i) 
             top_spaceship += '/'
             top_spaceship += '@'*((2*i) - 1)
             top_spaceship += '\\'
-            top_spaceship += ' '*(2*length-i) + '\n' 
+            top_spaceship += ' ' * ( (2*length) - i)
+            top_spaceship += '\n'
 
 
     return top_spaceship

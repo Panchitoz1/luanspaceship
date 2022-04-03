@@ -21,11 +21,12 @@ def main(argv):
 
     #Use values obtained with flags and assign them to classes/structs
     #Also assign values to ASCII Spaceship class/struct
-    LuanSpaceship_var = colorsandstyles.Spaceship(spaceship_length, spaceship_colorstyle, spaceship_style, None)
+    LuanSpaceship_var = colorsandstyles.Spaceship(spaceship_length, spaceship_colorstyle, spaceship_style)
     Luan_ASCII_var = colorsandstyles.ASCII_Spaceship(ascii_top, ascii_mid_top, ascii_mid_bottom, ascii_bottom)
 
     #Get and print final ASCII 
     final_ascii = colorsandstyles.AddCosmetics(LuanSpaceship_var, Luan_ASCII_var)
+    print(final_ascii)
 
 
 

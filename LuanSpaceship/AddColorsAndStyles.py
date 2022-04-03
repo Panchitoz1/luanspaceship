@@ -3,7 +3,7 @@ import LuanSpaceship.GetInputAsFlags
 # Define a class/struct with desired parameters for spaceship
 # that will be obtained as input via flags
 class Spaceship:
-    def __init__(self, length, color, style, ascii):
+    def __init__(self, length, colorstyle, style):
         self.length = length
         self.colorstyle = colorstyle
         self.style = style
@@ -79,10 +79,10 @@ def addColorsAndStyle(ascii, style, colorstyle):
 
 # Create the final ASCII colors concatenating respective strings
 def createString(ascii, style, colors_spaceship):
-    top_ascii = START+style+color_spaceship.top+ascii.top+END
-    mid_top_ascii = START+style+color_spaceship.mid_top+ascii.mid_top+END
-    mid_bottom_ascii = START+style+color_spaceship.mid_bottom+ascii.mid_bottom+END
-    bottom_ascii = START+style+color_spaceship.bottom+ascii.bottom+END
+    top_ascii = STARTCOLOR+style+colors_spaceship.top+ascii.top+ENDCOLOR
+    mid_top_ascii = STARTCOLOR+style+colors_spaceship.mid_top+ascii.mid_top+ENDCOLOR
+    mid_bottom_ascii = STARTCOLOR+style+colors_spaceship.mid_bottom+ascii.mid_bottom+ENDCOLOR
+    bottom_ascii = STARTCOLOR+style+colors_spaceship.bottom+ascii.bottom+ENDCOLOR
     return top_ascii+mid_top_ascii+mid_bottom_ascii+bottom_ascii
 
 
@@ -91,7 +91,7 @@ def selectColorByColorstyle(colorstyle):
     if colorstyle == 'none':
         return NONE, NONE, NONE, NONE
     if colorstyle == 'luan':
-        return WHITE, PINK, PINK, WHITE
+        return WHITE, PINK, PINK, YELLOW
     if colorstyle == 'ocean':
         return WHITE, LIGHT_BLUE, BLUE, LIGHT_BLUE
     if colorstyle == 'hell':
@@ -122,7 +122,7 @@ def check_if_colorstyle_in_list(colorstyle):
 #Simple function that checks if 'style' selected by the user is accepted/valid
 def check_if_style_in_list(style):
     if style.lower() not in styles_list: # if colorstyle is not valid
-        if style != GetInputAsFlags.flag_default_style:
+        if style != LuanSpaceship.GetInputAsFlags.flag_default_style:
             print('you have selected an invalid style ({}); using {} instead\n'.format(style, 'none'))
         return 'none'
     return style.lower()
