@@ -6,7 +6,7 @@ def DrawLuanSpaceship(length):
    mid_bottom, counter = drawMidBottomSpaceship(length)
    bottom = drawBottomSpaceShip(length, counter)
 
-   return top+mid_top+mid_bottom+bottom
+   return top, mid_top, mid_bottom, bottom
 
 
 # Draw the top part of the spaceship
@@ -16,19 +16,23 @@ def drawTopSpaceship(length):
     for i in range(0, length+1):
         if i == 0:
              top_spaceship += ' '*2*length
-             top_spaceship += '^\n'
+             top_spaceship += '^ \n'
         
         elif i == length:
             top_spaceship += ' '*length 
             top_spaceship += '/'
             top_spaceship += '_'*((2*length)-1)
-            top_spaceship += '\\\n'
+            top_spaceship += '\\'
+            top_spaceship += ' '*length + '\n'
+
 
         else:
-            top_spaceship += ' '*(2*length-i)             
+            top_spaceship += ' '*(2*length-i) 
             top_spaceship += '/'
             top_spaceship += '@'*((2*i) - 1)
-            top_spaceship += '\\\n'
+            top_spaceship += '\\'
+            top_spaceship += ' '*(2*length-i) + '\n' 
+
 
     return top_spaceship
 
@@ -47,7 +51,9 @@ def drawMidTopSpaceship(length):
         else: 
             midtop_spaceship += ' ' * (2*length - 1)
 
-        midtop_spaceship += '|\n'
+        midtop_spaceship += '|'
+        midtop_spaceship += ' ' * length + '\n'
+
 
     return midtop_spaceship
 
@@ -58,7 +64,7 @@ def drawMidBottomSpaceship(length):
     counter = 0
     # First, check 2 special cases/lengths that do not follow a pattern
     if length == 1:
-        return "/|_|\\\n", 0 
+        return "/|_|\\ \n", 0 
 
     if length == 2:
         midbottom_spaceship = ''
@@ -68,7 +74,8 @@ def drawMidBottomSpaceship(length):
         midbottom_spaceship += '|\\\n'
         midbottom_spaceship += '/ |'
         midbottom_spaceship += '_' * (2*length - 1)
-        midbottom_spaceship += '| \\\n'
+        midbottom_spaceship += '| \\'
+        midbottom_spaceship += ' ' * (1*length - 1) + '\n'
         return midbottom_spaceship, 0 
 
     midbottom_spaceship = ''
@@ -87,16 +94,20 @@ def drawMidBottomSpaceship(length):
                 midbottom_spaceship += ' ' * ((2*length) - 1)
             midbottom_spaceship += '|'
             midbottom_spaceship += ' ' * counter
-            midbottom_spaceship += '\\\n'
+            midbottom_spaceship += '\\'
+            midbottom_spaceship += ' ' * (1*length - x + start) + '\n'
+
             counter += 1
         else:
             midbottom_spaceship += ' ' * length 
             midbottom_spaceship += '|'
             midbottom_spaceship += ' ' * ((2*length) - 1)
-            midbottom_spaceship += '|\n'
+            midbottom_spaceship += '|'
+            midbottom_spaceship += ' ' * length + '\n'
     return midbottom_spaceship, counter
 
 
+# Draw bottom part of the spaceship
 def drawBottomSpaceShip(length, counter):
     if length == 1:
         return "\\/+\\/\n  +\n"
@@ -120,7 +131,8 @@ def drawBottomSpaceShip(length, counter):
             char = '-'
         bottom += '|' + char * width + '|'
         bottom += '+'* ((2*length) - 1)
-        bottom += '|' + char * width + '|\n'
+        bottom += '|' + char * width + '|'
+        bottom += ' ' * (length - width - 1) + '\n'
     bottom += printFire(length+1, length)
     return bottom
 
@@ -131,8 +143,8 @@ def printFire(initial_spaces, length):
     for i in range(length+1):
         fire += ' '*(initial_spaces + i)
         fire += '+'*((2*length) - 1 - (2 * i))
+        fire += ' '*(initial_spaces + i)
         fire += '\n'
-    fire += '\n'
 
     return fire
 

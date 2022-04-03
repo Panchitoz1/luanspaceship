@@ -1,42 +1,31 @@
 from absl import app
-import LuanSpaceship.Get_input_as_flags as gi
-import LuanSpaceship.DrawSpaceship as ds
+from LuanSpaceship.GetInputAsFlags import GetInput
+from LuanSpaceship.DrawSpaceship import DrawLuanSpaceship
+import LuanSpaceship.AddColorsAndStyles as colorsandstyles
+from pyperclip import copy as cp
 import subprocess
-import pyperclip
 
 
-# Define a class/struct with desired parameters for spaceship
-# that will be obtained as input via flags
-class Spaceship:
-    def __init__(self, length, color, style, ascii):
-        self.length = length
-        self.color = color
-        self.style = style
-        self.style = ascii
-
-
-# To draw our spaceship we will divide it into 4 parts
-class ASCII_Spaceship:
-    def __init__(self, top, mid_top, mid_bottom, bottom):
-        self.top = top
-        self.mid_top = mid_top
-        self.mid_bottom = mid_bottom
-        self.bottom = bottom
-
-
+# MAIN
 def main(argv):
     # Get parameters obtained with flags in command line
-    spaceship_length, spaceship_color, spaceship_style,  useClipboard = gi.GetInput(argv)
+    spaceship_length, spaceship_colorstyle, spaceship_style,  useClipboard = GetInput(argv)
 
     #Create ASCII Spaceship art based on length provided by the user
-    ascii_spaceship = ds.DrawLuanSpaceship(spaceship_length)
+    ascii_top, ascii_mid_top, ascii_mid_bottom, ascii_bottom = DrawLuanSpaceship(spaceship_length)
 
-    # If user type '-clipboard' flag, then copy it to the clipboard
+    # If user type '-clipboard' flag, then copy it to the clipboard before adding colors/styles
     if useClipboard:
-        pyperclip.copy(ascii_spaceship)
+        ascii_spaceship = ascii_top + ascii_mid_top + ascii_mid_bottom + ascii_bottom
+        cp(ascii_spaceship)
 
     #Use values obtained with flags and assign them to classes/structs
-    LuanSpaceship = Spaceship(spaceship_length, spaceship_color, spaceship_style, None)
+    #Also assign values to ASCII Spaceship class/struct
+    LuanSpaceship_var = colorsandstyles.Spaceship(spaceship_length, spaceship_colorstyle, spaceship_style, None)
+    Luan_ASCII_var = colorsandstyles.ASCII_Spaceship(ascii_top, ascii_mid_top, ascii_mid_bottom, ascii_bottom)
+
+    #Get and print final ASCII 
+    final_ascii = colorsandstyles.AddCosmetics(LuanSpaceship_var, Luan_ASCII_var)
 
 
 
