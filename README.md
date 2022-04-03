@@ -81,7 +81,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://github.com/Panchitoz1/luanspaceship)
 
-Luanspaceship is a really simple Command-Line Interface written in Python3 that prints an ASCII spaceship in function of a length given via flags. Aditionally, output can be copied into clipboard, change colors of spaceship printed (only for console visual purposes) and a couple of others functions.
+Luanspaceship is a really simple Command-Line Interface written in Python3 that prints an ASCII spaceship in function of a length given via flag. Aditionally, output can be copied into clipboard, change colors of spaceship printed (only for console visual purposes) and a couple of others functions.
 
 This is a little project written for [Science & Commit // Workshop 2022](https://github.com/Science-and-Commit/Workshop_2022).
 
@@ -177,7 +177,10 @@ Another example could be if you want to print an ASCII spaceship with length 8 a
 ```sh
 luanspaceship -length 8 -clipboard
 ```
-
+You can also change color combinations using `-colorstyle` flag and/or adding some attributes/styles when being displayed with `-style` flag. For example:
+```sh
+luanspaceship -colorstyle ocean -style blink
+```
 To check all flags and functions available I recommend check short help-page running:
 ```sh
 luanspaceship -h
