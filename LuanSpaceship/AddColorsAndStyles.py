@@ -51,7 +51,7 @@ LIGHT_BLUE = '1;34m'
 PINK = '1;35m'
 LIGHT_CYAN = '1;36m'
 WHITE = '1;37m'
-NONE = '0m' 
+NONE = 'm' 
 
 #Styles Available
 BLINK = '6;'
@@ -79,6 +79,8 @@ def addColorsAndStyle(ascii, style, colorstyle):
 
 # Create the final ASCII colors concatenating respective strings
 def createString(ascii, style, colors_spaceship):
+    if style != NONE_STYLE and colors_spaceship.top == NONE:
+        style = style.replace(';','')
     top_ascii = STARTCOLOR+style+colors_spaceship.top+ascii.top+ENDCOLOR
     mid_top_ascii = STARTCOLOR+style+colors_spaceship.mid_top+ascii.mid_top+ENDCOLOR
     mid_bottom_ascii = STARTCOLOR+style+colors_spaceship.mid_bottom+ascii.mid_bottom+ENDCOLOR

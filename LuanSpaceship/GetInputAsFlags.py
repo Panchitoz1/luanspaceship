@@ -34,8 +34,8 @@ flag_text_length = 'Size for Luan Spaceship (in ASCII character units (??)).'
 flag_text_clipboard = 'Copies Spaceship generated into your clipboard.'
 flag_text_help = 'Prints this help message.'
 flag_text_print = 'Prints parameters selected via flags by the user.'
-flag_text_show_colorstyles = 'Shows color styles (color combinations) availables for the program that will change ASCII spaceship color'
-flag_text_show_styles = 'Shows styles availables to add to ASCII spaceship'
+flag_text_show_colorstyles = 'Shows color styles (color combinations) availables for the program that will change ASCII spaceship color.'
+flag_text_show_styles = 'Shows styles availables to add to ASCII spaceship.'
 
 # Define flags
 flags.DEFINE_string(flag_name_style, flag_default_style, flag_text_style)
