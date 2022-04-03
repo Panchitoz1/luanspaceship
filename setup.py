@@ -9,7 +9,7 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
         name='luanspaceship',
-        version='1.0.0',
+        version='1.0.1',
         author='Francisco Carrasco Varela',
         author_email='ffcarrasco@uc.cl',
         description='Prints an ASCII spaceship given an integer via flag \'-length\'',
