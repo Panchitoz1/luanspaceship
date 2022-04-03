@@ -30,7 +30,6 @@ def main(argv):
 
     #Create ASCII Spaceship art based on length provided by the user
     ascii_spaceship = ds.DrawLuanSpaceship(spaceship_length)
-    print(ascii_spaceship)
 
     # If user type '-clipboard' flag, then copy it to the clipboard
     if useClipboard:
